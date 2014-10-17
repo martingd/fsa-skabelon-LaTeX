@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Folkeskolens afgangsprøve %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4,12pt]{article}
+
+% Danish character input and hyphenations.
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{tabularx} % Nice tabular (tables) environment.
+\usepackage{bigstrut} % For extra space to hrules in tabular.
+  \setlength\bigstrutjot{3pt}
+
+% Maybe this will come in handy in the future.
+%\usepackage{tabu}
+
+% For being able to reference the page number of the last page.
+\usepackage{lastpage}
+
+% Page breaks before all sections.
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set values here for exam header. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\skoleklasse}{8.D}
+\newcommand{\proevetype}{Folkeskolens afgangsprøve}
+\newcommand{\proevefag}{Matematik}
+\newcommand{\elevnavn}{Sofus Dawids}
+\newcommand{\elevnummer}{???}
+\newcommand{\tilsynshavende}{???}
+\newcommand{\eksamensdato}{xx. måned 201X}
+
+% Front page for exam.
+\newcommand{\eksamensheader}{
+\noindent
+\begin{tabularx}{\textwidth}{|p{4cm}|X|p{4cm}|}
+  \hline
+  \multicolumn{1}{|p{4cm}}{Skolenr. 173004} &
+  \multicolumn{1}{>{\centering}X}{\large \textbf{HUMMELTOFTESKOLEN}} &
+  \multicolumn{1}{p{4cm}|}{\raggedleft Tlf: 4585 4649}
+  \bigstrut
+  \\
+  \multicolumn{3}{|c|}{2830 Virum} \\
+  \hline
+  Prøve: & \proevetype & Dato: \eksamensdato \\
+  \hline
+  Fag: & \proevefag & Klasse: \skoleklasse \\
+  \hline
+  Elevens navn: & \elevnavn & Elevnr.: \elevnummer \\
+  \hline
+  Tilsynshavende: & \begin{tabular}{@{}l|l@{}} \tilsynshavende & Elevunderskrift: \end{tabular} & Antal ark i alt: \pageref{LastPage} \\
+  \hline
+\end{tabularx}
+\vspace{1cm}
+}
+
+% Headers and footers.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\newcommand{\eksamensfooter}{%
+  \lfoot{\elevnavn \\ Hummeltofteskolen \skoleklasse}
+  \cfoot{\eksamensdato \\ side~\thepage~af~\pageref{LastPage}}
+  \rfoot{\proevefag \\ Elevnummer \elevnummer}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+\eksamensfooter
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0.0pt}
+  \eksamensfooter
+}
+
+% End of preamble and beginning of text.
+\begin{document}
+
+\thispagestyle{plain}
+\eksamensheader
+
+
+This is an example input file.  Comparing it with
+the output it generates can show you how to
+produce a simple document of your own.
+
+\section{For lidt eller for meget søvn?}
+
+Lorem ipsum\ldots
+
+\LaTeX\ is good at typesetting mathematical formulas
+like
+       \( x-3y + z = 7 \) 
+or
+       \( a_{1} > x^{2n} + y^{2n} > x' \)
+
+\section{Til sundhedsplejerske}
+Mathematical formulas may also be displayed.
+A displayed formula is one-line long; multiline
+formulas require special formatting instructions.
+\[
+  \sum\limits_{n=1}^\infty{\pi \over n^2} = \pi \cdot \sum\limits_{n=1}^\infty{1 \over n^2} = 2\pi
+\]
+
+% End of document.
+\end{document}
+
