@@ -21,6 +21,12 @@
 % Set margins.
 \usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
 
+% Handle svg vector graphics.
+\usepackage{svg}
+
+% Handle raster graphics (e.g. PNG).
+\usepackage{graphicx}
+
 % Nice tabular (tables) environment.
 \usepackage{tabularx}
 
@@ -187,6 +193,37 @@ Man bør ikke placere tabeller og figurer midt i teksten, da det ikke er sikkert
 \end{table}
 
 Se fx tabel~\ref{table:simpel}, som automatisk er placeret på side~\pageref{table:simpel}.
+
+\subsection{Tegninger og billeder}
+Man kan inkludere billeder i SVG vektorgrafik eller fx PNG billeder.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=5cm]{Enhedscirklen.png}
+  \caption{Enhedscirklen i PNG (300 dpi)}
+  \label{figure:enhedscirklenpng300}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=5cm]{Enhedscirklen72.png}
+  \caption{Enhedscirklen i PNG (72dpi)}
+  \label{figure:enhedscirklenpng72}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=5cm]{Enhedscirklen.eps}
+  \caption{Enhedscirklen i EPS}
+  \label{figure:enhedscirkleneps}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=5cm]{Enhedscirklen.pdf}
+  \caption{Enhedscirklen i PDF}
+  \label{figure:enhedscirklenpdf}
+\end{figure}
 
 % End of document.
 \end{document}
