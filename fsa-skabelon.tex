@@ -13,8 +13,10 @@
 
 % AMS math package for nice equation and math options.
 \usepackage{amsmath}
-% Restart equation numbering for each section and prefix with section number.
+% Restart numbering for each section and prefix with section number.
 \numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
 
 % Set margins.
 \usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
@@ -148,6 +150,7 @@ Her er en simpel tabel:
 \noindent
 \begin{tabu}{|l|c|r|}
   \hline % vandret linje _over_ denne række.
+  \rowfont{\bfseries} % Denne række er i fed.
   venstrestillet & centreret & højrestillet \\ % Linjeskift
   \hline % vandret linje _over_ denne række.
   l & c & r \\
@@ -159,11 +162,31 @@ Her er en anden tabel, hvor midterste kolonne strækker sig. Derfor har vi angiv
 \noindent
 \begin{tabu} to \textwidth {|l|X[c]|r|}
   \hline % vandret linje _over_ denne række.
+  \rowfont{\bfseries} % Denne række er i fed.
   venstrestillet & centreret & højrestillet \\
   \hline % vandret linje _over_ denne række.
   l & c & r \\
   \hline % vandret linje nederst
 \end{tabu}
+
+\subsection{Placering}
+Man bør ikke placere tabeller og figurer midt i teksten, da det ikke er sikkert, at de kan være lige der. Derfor skal man overlade beslutningen til \LaTeX, så de placeres bedst muligt. Til det formål benytter man \verb$table$ og \verb$figure$ environments. Så får man også nummereret tabeller og figurer.
+
+\begin{table}[htp] % Placer her (h), på toppen af samme side (t) eller på egen side (p).
+  \centering
+  \begin{tabu}{|l|c|r|}
+    \hline % vandret linje _over_ denne række.
+    \rowfont{\bfseries} % Denne række er i fed.
+    venstrestillet & centreret & højrestillet \\ % Linjeskift
+    \hline % vandret linje _over_ denne række.
+    l & c & r \\
+    \hline % vandret linje nederst
+  \end{tabu}
+  \caption{En simpel tabel}
+  \label{table:simpel}
+\end{table}
+
+Se fx tabel~\ref{table:simpel}, som automatisk er placeret på side~\pageref{table:simpel}.
 
 % End of document.
 \end{document}
