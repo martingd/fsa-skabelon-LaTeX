@@ -8,6 +8,9 @@
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
 
+% Gives hyperlinks in PDF file.
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+
 \usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
 
 \usepackage{tabularx} % Nice tabular (tables) environment.
@@ -34,7 +37,7 @@
 \newcommand{\elevnummer}{???}
 \newcommand{\tilsynshavende}{???}
 \newcommand{\eksamensdato}{xx. måned 201X}
-\newcommand{\antalarkialt}{\pageref{LastPage} \textbf{Kontroller!}}
+\newcommand{\antalarkialt}{\pageref*{LastPage} \textbf{Kontroller!}}
 
 % Front page box for exam.
 \newcommand{\eksamensforsideboks}{
@@ -67,7 +70,7 @@
 \pagestyle{fancy}
 \newcommand{\eksamensfooter}{%
   \lfoot{\elevnavn \\ Hummeltofteskolen \skoleklasse}
-  \cfoot{\eksamensdato \\ side~\thepage~af~\pageref{LastPage}}
+  \cfoot{\eksamensdato \\ side~\thepage~af~\pageref*{LastPage}}
   \rfoot{\proevefag \\ Elevnummer \elevnummer}
   \renewcommand{\footrulewidth}{0.4pt}
 }
