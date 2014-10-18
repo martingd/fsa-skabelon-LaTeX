@@ -53,7 +53,6 @@
 
 % Front page box for exam.
 \newcommand{\eksamensforsideboks}{
-\noindent
 \begin{tabu} to  \textwidth {|X[c]|}
   \hline
   \tabulinesep=^1pt
@@ -81,9 +80,9 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \newcommand{\eksamensfooter}{%
-  \lfoot{\elevnavn \\ Hummeltofteskolen \skoleklasse}
-  \cfoot{\eksamensdato \\ side~\thepage~af~\pageref*{LastPage}}
-  \rfoot{\proevefag \\ Elevnummer \elevnummer}
+  \lfoot{\elevnavn \linebreak Hummeltofteskolen \skoleklasse}
+  \cfoot{\eksamensdato \linebreak side~\thepage~af~\pageref*{LastPage}}
+  \rfoot{\proevefag \linebreak Elevnummer \elevnummer}
   \renewcommand{\footrulewidth}{0.4pt}
 }
 \eksamensfooter
@@ -152,7 +151,6 @@ For at lave en tabel, bruger man \verb$tabular$, \verb$tabularx$ eller \verb$tab
 
 Her er en simpel tabel:
 
-\noindent
 \begin{tabu}{|l|c|r|}
   \hline % vandret linje _over_ denne række.
   \rowfont{\bfseries} % Denne række er i fed.
@@ -164,7 +162,6 @@ Her er en simpel tabel:
 
 Her er en anden tabel, hvor midterste kolonne strækker sig. Derfor har vi angivet bredden til hele siden. Man kunne også angive en eksakt bredde, fx 5cm.
 
-\noindent
 \begin{tabu} to \textwidth {|l|X[c]|r|}
   \hline % vandret linje _over_ denne række.
   \rowfont{\bfseries} % Denne række er i fed.
