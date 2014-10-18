@@ -90,23 +90,53 @@
 
 FIXME: Her skal der oversigt ind med bilag.
 
-\section{For lidt eller for meget søvn?}
+\section{Første opgave}
+Start første opgave her\ldots
 
-Lorem ipsum\ldots
+Brug \verb$\section{...}$ for hvert ny opgave.
+
+% Bilag starter herefter.
+\appendix
+\section{Første bilagsafsnit}
+Start første \emph{bilagsafsnit} her\ldots
+
+Brug \verb$\section{...}$ for hvert nyt bilagsafsnit.
+
+\section{Eksempler -- slettes før aflevering}
+Her er en række brugbare eksempler.
+
+\subsection{Formler i teksten}
+For at lave en formel midt i den løbende tekst, skriver man \verb$\($ og \verb$\)$ omkring formlen.
+Så kommer det til at se således ud med \( a^2 + b^2 = c^2 \) midt i teksten.
+
+\subsection{Fritstående formler}
+For at lave en formel som står for sig selv, bruger man \verb$\[$ og \verb$\]$ ovenfor og nedenfor formlen på linjer for sig selv således:
+\[
+  \sum\limits_{n=1}^\infty{\pi \over n^2}
+    = \pi \cdot \sum\limits_{n=1}^\infty{1 \over n^2}
+    = 2\pi
+\]
+For at få nummereret formlen, benytter man \verb$equation$ environment:
+\begin{equation}
+  \sum\limits_{n=1}^\infty{\pi \over n^2}
+    = \pi \cdot \sum\limits_{n=1}^\infty{1 \over n^2}
+    = 2\pi
+\end{equation}
+
+
+\subsection{Henvisninger}
+For at henvise til en ting -- fx en formel, så sætter man en \verb$\label$ i objektet og benytter \verb$\ref$ og \verb$\pageref$ til at henvise. Her er en formel
+\begin{equation}
+  a^2 + b^2 = c^2
+  \label{eq:pytagoras}
+\end{equation}
+Her henviser vi så til formlen, som har nummer~\ref{eq:pytagoras} og står på side~\pageref{eq:pytagoras}. Bemærk, at der er indsat \verb$~$ mellem tekst og reference. Det er et \emph{non-breaking space}, så vi undgår et linjeskift her. Husk at køre \verb$pdflatex$ to gange for at opdatere referencer.
 
 \LaTeX\ is good at typesetting mathematical formulas
 like
        \( x-3y + z = 7 \) 
 or
        \( a_{1} > x^{2n} + y^{2n} > x' \)
-
-\section{Til sundhedsplejerske}
-Mathematical formulas may also be displayed.
-A displayed formula is one-line long; multiline
-formulas require special formatting instructions.
-\[
-  \sum\limits_{n=1}^\infty{\pi \over n^2} = \pi \cdot \sum\limits_{n=1}^\infty{1 \over n^2} = 2\pi
-\]
 
 % End of document.
 \end{document}
