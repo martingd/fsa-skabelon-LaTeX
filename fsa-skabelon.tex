@@ -15,7 +15,7 @@
   \setlength\bigstrutjot{3pt}
 
 % Maybe this will come in handy in the future.
-%\usepackage{tabu}
+\usepackage{tabu}
 
 % For being able to reference the page number of the last page.
 \usepackage{lastpage}
@@ -30,32 +30,35 @@
 \newcommand{\skoleklasse}{8.D}
 \newcommand{\proevetype}{Folkeskolens afgangsprøve}
 \newcommand{\proevefag}{Matematik}
-\newcommand{\elevnavn}{Sofus Dawids}
+\newcommand{\elevnavn}{Xofluz}
 \newcommand{\elevnummer}{???}
 \newcommand{\tilsynshavende}{???}
 \newcommand{\eksamensdato}{xx. måned 201X}
+\newcommand{\antalarkialt}{\pageref{LastPage} \textbf{Kontroller!}}
 
-% Front page for exam.
-\newcommand{\eksamensheader}{
+% Front page box for exam.
+\newcommand{\eksamensforsideboks}{
 \noindent
-\begin{tabularx}{\textwidth}{|p{4cm}|X|p{4cm}|}
+\tabulinesep=^1pt
+\begin{tabu} to  \textwidth {|X[c]|}
   \hline
-  \multicolumn{1}{|p{4cm}}{Skolenr. 173004} &
-  \multicolumn{1}{>{\centering}X}{\large \textbf{HUMMELTOFTESKOLEN}} &
-  \multicolumn{1}{p{4cm}|}{\raggedleft Tlf: 4585 4649}
-  \bigstrut
-  \\
-  \multicolumn{3}{|c|}{2830 Virum} \\
+  \begin{tabu} {@{}X[1,l]X[3,c]X[1,r]@{}}
+    Skolenr. 173004 & {\large \textbf{HUMMELTOFTESKOLEN}} & Tlf: 4585 4649 \\
+  & 2830 Virum & \\
+  \end{tabu} \\
   \hline
-  Prøve: & \proevetype & Dato: \eksamensdato \\
+  \begin{tabu} {@{}lX[l]|ll@{}}
+    Prøve: & \proevetype & Dato: & \eksamensdato \\
+    Fag: & \proevefag & Klasse: & \skoleklasse \\
+    Elevens navn: & \elevnavn & Elevnr.: & \elevnummer \\
+    Elevunderskrift: & & Antal ark i alt: & \antalarkialt \\[0.5cm]
+  \end{tabu} \\
   \hline
-  Fag: & \proevefag & Klasse: \skoleklasse \\
+  \begin{tabu} {@{}l|lX[l]|ll@{}}
+    Tilsynshavende & Underskrift: & & Initialer: & \tilsynshavende \\[0.5cm]
+  \end{tabu} \\
   \hline
-  Elevens navn: & \elevnavn & Elevnr.: \elevnummer \\
-  \hline
-  Tilsynshavende: & \begin{tabular}{@{}l|l@{}} \tilsynshavende & Elevunderskrift: \end{tabular} & Antal ark i alt: \pageref{LastPage} \\
-  \hline
-\end{tabularx}
+\end{tabu}
 \vspace{1cm}
 }
 
@@ -79,12 +82,10 @@
 \begin{document}
 
 \thispagestyle{plain}
-\eksamensheader
+\eksamensforsideboks
 
 
-This is an example input file.  Comparing it with
-the output it generates can show you how to
-produce a simple document of your own.
+FIXME: Her skal der oversigt ind med bilag.
 
 \section{For lidt eller for meget søvn?}
 
