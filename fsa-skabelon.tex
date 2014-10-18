@@ -86,14 +86,17 @@
   \eksamensfooter
 }
 
+\makeatletter
+\newcommand*{\tableofcontentsnobreak}{\@starttoc{toc}}
+\makeatother
+
 % End of preamble and beginning of text.
 \begin{document}
 
 \thispagestyle{plain}
 \eksamensforsideboks
 
-
-FIXME: Her skal der oversigt ind med bilag.
+\tableofcontentsnobreak
 
 \section{Første opgave}
 Start første opgave her\ldots
