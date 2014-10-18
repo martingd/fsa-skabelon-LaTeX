@@ -140,11 +140,30 @@ For at henvise til en ting -- fx en formel, så sætter man en \verb$\label$ i o
 \end{equation}
 Her henviser vi så til formlen, som har nummer~\ref{eq:pytagoras} og står på side~\pageref{eq:pytagoras}. Bemærk, at der er indsat \verb$~$ mellem tekst og reference. Det er et \emph{non-breaking space}, så vi undgår et linjeskift her. Husk at køre \verb$pdflatex$ to gange for at opdatere referencer.
 
-\LaTeX\ is good at typesetting mathematical formulas
-like
-       \( x-3y + z = 7 \) 
-or
-       \( a_{1} > x^{2n} + y^{2n} > x' \)
+\subsection{Tabeller}
+For at lave en tabel, bruger man \verb$tabular$, \verb$tabularx$ eller \verb$tabu$ environment.
+
+Her er en simpel tabel:
+
+\noindent
+\begin{tabu}{|l|c|r|}
+  \hline % vandret linje _over_ denne række.
+  venstrestillet & centreret & højrestillet \\ % Linjeskift
+  \hline % vandret linje _over_ denne række.
+  l & c & r \\
+  \hline % vandret linje nederst
+\end{tabu}
+
+Her er en anden tabel, hvor midterste kolonne strækker sig. Derfor har vi angivet bredden til hele siden. Man kunne også angive en eksakt bredde, fx 5cm.
+
+\noindent
+\begin{tabu} to \textwidth {|l|X[c]|r|}
+  \hline % vandret linje _over_ denne række.
+  venstrestillet & centreret & højrestillet \\
+  \hline % vandret linje _over_ denne række.
+  l & c & r \\
+  \hline % vandret linje nederst
+\end{tabu}
 
 % End of document.
 \end{document}
